@@ -1,0 +1,335 @@
+﻿
+> ekon-afrika@1.0.0 build
+> next build
+
+  Ôû▓ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+node.exe : <w> [webpa
+ck.cache.PackFileCach
+eStrategy] Skipped 
+not serializable 
+cache item 'Compilati
+on/modules|C:\Users\l
+earn\ekon_afrika\node
+_modules\next\dist\bu
+ild\webpack\loaders\c
+ss-loader\src\index.j
+s??ruleSet[1].rules[1
+4].oneOf[12].use[2]!C
+:\Users\learn\ekon_af
+rika\node_modules\nex
+t\dist\build\webpack\
+loaders\postcss-loade
+r\src\index.js??ruleS
+et[1].rules[14].oneOf
+[12].use[3]!C:\Users\
+learn\ekon_afrika\src
+\app\globals.css': 
+No serializer 
+registered for 
+PostCSSSyntaxError
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (<w> [we   
+ bpack.ca...tCSSS    
+yntaxError:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+<w> while 
+serializing webpack/l
+ib/cache/PackFileCach
+eStrategy.PackContent
+Items -> webpack/lib/
+NormalModule -> webpa
+ck/lib/ModuleBuildErr
+or -> 
+PostCSSSyntaxError
+Failed to compile.
+
+./src/app/globals.css
+:50:5
+Syntax error: C:\User
+s\learn\ekon_afrika\s
+rc\app\globals.css 
+The `shadow-[0_8px_32
+px_0_rgba(0,` class 
+does not exist. If `s
+hadow-[0_8px_32px_0_r
+gba(0,` is a custom 
+class, make sure it 
+is defined within a 
+`@layer` directive.
+
+ [90m 48 | [39m
+ [90m 49 | [39m  [
+33m.cyber-glass[39m 
+[33m{[39m
+[1m[31m>[39m[22m
+[90m 50 | [39m    
+[36m@apply[39m 
+bg-white/5 
+backdrop-blur-xl 
+border 
+border-white/10 shado
+w-[33m[[39m[36m0_8
+px_32px_0_rgba[39m[
+36m(0, 0, 0, 0.37)[3
+9m[33m][39m[33m;[
+39m
+ [90m    | [39m    
+[1m[31m^[39m[22m
+ [90m 51 | [39m  
+[33m}[39m
+ [90m 52 | [39m
+
+./src/app/globals.css
+Syntax error: C:\User
+s\learn\ekon_afrika\s
+rc\app\globals.css 
+The `shadow-[0_8px_32
+px_0_rgba(0,` class 
+does not exist. If `s
+hadow-[0_8px_32px_0_r
+gba(0,` is a custom 
+class, make sure it 
+is defined within a 
+`@layer` directive. 
+(50:5)
+
+ [90m 48 | [39m
+ [90m 49 | [39m  [
+33m.cyber-glass[39m 
+[33m{[39m
+[1m[31m>[39m[22m
+[90m 50 | [39m    
+[36m@apply[39m 
+bg-white/5 
+backdrop-blur-xl 
+border 
+border-white/10 shado
+w-[33m[[39m[36m0_8
+px_32px_0_rgba[39m[
+36m(0, 0, 0, 0.37)[3
+9m[33m][39m[33m;[
+39m
+ [90m    | [39m    
+[1m[31m^[39m[22m
+ [90m 51 | [39m  
+[33m}[39m
+ [90m 52 | [39m
+
+    at 
+tryRunOrWebpackError 
+(C:\Users\learn\ekon_
+afrika\node_modules\n
+ext\dist\compiled\web
+pack\bundle5.js:28:31
+2989)
+    at __webpack_requ
+ire_module__ (C:\User
+s\learn\ekon_afrika\n
+ode_modules\next\dist
+\compiled\webpack\bun
+dle5.js:28:131165)
+    at __nested_webpa
+ck_require_153728__ (
+C:\Users\learn\ekon_a
+frika\node_modules\ne
+xt\dist\compiled\webp
+ack\bundle5.js:28:130
+607)
+    at C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\compil
+ed\webpack\bundle5.js
+:28:131454
+    at 
+symbolIterator (C:\Us
+ers\learn\ekon_afrika
+\node_modules\next\di
+st\compiled\neo-async
+\async.js:1:14444)
+    at done (C:\Users
+\learn\ekon_afrika\no
+de_modules\next\dist\
+compiled\neo-async\as
+ync.js:1:14824)
+    at Hook.eval [as 
+callAsync] (eval at 
+create (C:\Users\lear
+n\ekon_afrika\node_mo
+dules\next\dist\compi
+led\webpack\bundle5.j
+s:13:28858), 
+<anonymous>:15:1)
+    at Hook.CALL_ASYN
+C_DELEGATE [as 
+_callAsync] (C:\Users
+\learn\ekon_afrika\no
+de_modules\next\dist\
+compiled\webpack\bund
+le5.js:13:26012)
+    at C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\compil
+ed\webpack\bundle5.js
+:28:130328
+    at 
+symbolIterator (C:\Us
+ers\learn\ekon_afrika
+\node_modules\next\di
+st\compiled\neo-async
+\async.js:1:14402)
+-- inner error --
+Syntax error: C:\User
+s\learn\ekon_afrika\s
+rc\app\globals.css 
+The `shadow-[0_8px_32
+px_0_rgba(0,` class 
+does not exist. If `s
+hadow-[0_8px_32px_0_r
+gba(0,` is a custom 
+class, make sure it 
+is defined within a 
+`@layer` directive. 
+(50:5)
+
+ [90m 48 | [39m
+ [90m 49 | [39m  [
+33m.cyber-glass[39m 
+[33m{[39m
+[1m[31m>[39m[22m
+[90m 50 | [39m    
+[36m@apply[39m 
+bg-white/5 
+backdrop-blur-xl 
+border 
+border-white/10 shado
+w-[33m[[39m[36m0_8
+px_32px_0_rgba[39m[
+36m(0, 0, 0, 0.37)[3
+9m[33m][39m[33m;[
+39m
+ [90m    | [39m    
+[1m[31m^[39m[22m
+ [90m 51 | [39m  
+[33m}[39m
+ [90m 52 | [39m
+
+    at 
+Object.<anonymous> (C
+:\Users\learn\ekon_af
+rika\node_modules\nex
+t\dist\build\webpack\
+loaders\css-loader\sr
+c\index.js??ruleSet[1
+].rules[14].oneOf[12]
+.use[2]!C:\Users\lear
+n\ekon_afrika\node_mo
+dules\next\dist\build
+\webpack\loaders\post
+css-loader\src\index.
+js??ruleSet[1].rules[
+14].oneOf[12].use[3]!
+C:\Users\learn\ekon_a
+frika\src\app\globals
+.css:1:7)
+    at C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\compil
+ed\webpack\bundle5.js
+:28:922493
+    at Hook.eval [as 
+call] (eval at 
+create (C:\Users\lear
+n\ekon_afrika\node_mo
+dules\next\dist\compi
+led\webpack\bundle5.j
+s:13:28636), 
+<anonymous>:7:1)
+    at 
+Hook.CALL_DELEGATE 
+[as _call] (C:\Users\
+learn\ekon_afrika\nod
+e_modules\next\dist\c
+ompiled\webpack\bundl
+e5.js:13:25906)
+    at C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\compil
+ed\webpack\bundle5.js
+:28:131198
+    at 
+tryRunOrWebpackError 
+(C:\Users\learn\ekon_
+afrika\node_modules\n
+ext\dist\compiled\web
+pack\bundle5.js:28:31
+2943)
+    at __webpack_requ
+ire_module__ (C:\User
+s\learn\ekon_afrika\n
+ode_modules\next\dist
+\compiled\webpack\bun
+dle5.js:28:131165)
+    at __nested_webpa
+ck_require_153728__ (
+C:\Users\learn\ekon_a
+frika\node_modules\ne
+xt\dist\compiled\webp
+ack\bundle5.js:28:130
+607)
+    at C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\compil
+ed\webpack\bundle5.js
+:28:131454
+    at 
+symbolIterator (C:\Us
+ers\learn\ekon_afrika
+\node_modules\next\di
+st\compiled\neo-async
+\async.js:1:14444)
+
+Generated code for C:
+\Users\learn\ekon_afr
+ika\node_modules\next
+\dist\build\webpack\l
+oaders\css-loader\src
+\index.js??ruleSet[1]
+.rules[14].oneOf[12].
+use[2]!C:\Users\learn
+\ekon_afrika\node_mod
+ules\next\dist\build\
+webpack\loaders\postc
+ss-loader\src\index.j
+s??ruleSet[1].rules[1
+4].oneOf[12].use[3]!C
+:\Users\learn\ekon_af
+rika\src\app\globals.
+css
+
+Import trace for 
+requested module:
+./src/app/globals.css
+
+
+> Build failed 
+because of webpack 
+errors

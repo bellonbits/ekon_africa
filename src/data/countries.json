@@ -1,0 +1,82 @@
+[
+    {
+        "code": "KEN",
+        "name": "Kenya",
+        "region": "East Africa",
+        "population": 54985698,
+        "capital": "Nairobi",
+        "currency": "KES"
+    },
+    {
+        "code": "NGA",
+        "name": "Nigeria",
+        "region": "West Africa",
+        "population": 223804632,
+        "capital": "Abuja",
+        "currency": "NGN"
+    },
+    {
+        "code": "ZAF",
+        "name": "South Africa",
+        "region": "Southern Africa",
+        "population": 60414495,
+        "capital": "Pretoria",
+        "currency": "ZAR"
+    },
+    {
+        "code": "EGY",
+        "name": "Egypt",
+        "region": "North Africa",
+        "population": 112716598,
+        "capital": "Cairo",
+        "currency": "EGP"
+    },
+    {
+        "code": "ETH",
+        "name": "Ethiopia",
+        "region": "East Africa",
+        "population": 126527060,
+        "capital": "Addis Ababa",
+        "currency": "ETB"
+    },
+    {
+        "code": "GHA",
+        "name": "Ghana",
+        "region": "West Africa",
+        "population": 34121985,
+        "capital": "Accra",
+        "currency": "GHS"
+    },
+    {
+        "code": "TZA",
+        "name": "Tanzania",
+        "region": "East Africa",
+        "population": 67438106,
+        "capital": "Dodoma",
+        "currency": "TZS"
+    },
+    {
+        "code": "UGA",
+        "name": "Uganda",
+        "region": "East Africa",
+        "population": 48582334,
+        "capital": "Kampala",
+        "currency": "UGX"
+    },
+    {
+        "code": "RWA",
+        "name": "Rwanda",
+        "region": "East Africa",
+        "population": 14094683,
+        "capital": "Kigali",
+        "currency": "RWF"
+    },
+    {
+        "code": "SEN",
+        "name": "Senegal",
+        "region": "West Africa",
+        "population": 17763163,
+        "capital": "Dakar",
+        "currency": "XOF"
+    }
+]

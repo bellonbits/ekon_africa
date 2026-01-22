@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 4%;
+  --foreground: 210 40% 98%;
+  --primary: 262 83% 58%;
+  --accent: 188 86% 43%;
+  --secondary: 15 88% 49%;
+  --surface: 222 47% 8%;
+  --border: 222 47% 15%;
+}
+
+.dark {
+  --background: 260 60% 3%;
+  --foreground: 210 20% 98%;
+  --primary: 262 83% 58%;
+  --accent: 188 86% 43%;
+  --secondary: 15 88% 49%;
+  --surface: 260 60% 6%;
+  --border: 260 50% 15%;
+}
+
+@layer base {
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] overflow-x-hidden transition-colors duration-500;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .cyber-grid {
+    background-image:
+      linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .cyber-glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-cyber-glass;
+  }
+
+  .cyber-card {
+    @apply relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-primary-500/50 hover:shadow-cyber-card-hover;
+  }
+
+  .neon-glow-purple {
+    @apply shadow-cyber-neon;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+
+  .crystal-blob {
+    @apply absolute rounded-full mix-blend-screen filter blur-[80px] opacity-40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500/30 rounded-full hover:bg-primary-500/50 transition-colors;
+}
+
+/* Ribbon Scroll Animation */
+@keyframes scrollText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollText 20s linear infinite;
+}
+
+/* Markdown Chat Styles */
+.markdown-content {
+  @apply text-base leading-relaxed;
+}
+
+.markdown-content p {
+  @apply mb-4;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  @apply text-white font-bold my-4;
+}
+
+.markdown-content ul {
+  @apply list-disc list-inside mb-4;
+}
+
+.markdown-content code {
+  @apply bg-white/10 px-1.5 py-0.5 rounded font-mono text-sm;
+}
+
+.markdown-content pre {
+  @apply bg-black/40 p-4 rounded-2xl border border-white/10 mb-4 overflow-x-auto;
+}
