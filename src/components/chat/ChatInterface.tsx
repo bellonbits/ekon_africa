@@ -49,6 +49,10 @@ export default function ChatInterface() {
         setInput('')
         setIsLoading(true)
 
+        // Create an empty assistant message to fill with stream
+        const assistantMsgId = Date.now()
+        setMessages(prev => [...prev, { role: 'assistant', content: '', id: assistantMsgId }])
+
         try {
             const response = await fetch('/api/chat', {
                 method: 'POST',
@@ -56,14 +60,52 @@ export default function ChatInterface() {
                 body: JSON.stringify({
                     message: text,
                     mode,
-                    history: messages
+                    history: messages.slice(-10) // Limit history for context window
                 }),
             })
 
-            const data = await response.json()
-            setMessages(prev => [...prev, { role: 'assistant', content: data.content }])
+            if (!response.ok) throw new Error('Failed to fetch from Ekon API')
+
+            const reader = response.body?.getReader()
+            const decoder = new TextDecoder()
+            let accumulatedContent = ''
+
+            if (reader) {
+                while (true) {
+                    const { done, value } = await reader.read()
+                    if (done) break
+
+                    const chunk = decoder.decode(value)
+                    const lines = chunk.split('\n')
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const data = line.slice(6)
+                            if (data === '[DONE]') break
+
+                            try {
+                                const parsed = JSON.parse(data)
+                                accumulatedContent += parsed.content
+
+                                // Update the specifically created assistant message
+                                setMessages(prev => prev.map(msg =>
+                                    msg.id === assistantMsgId
+                                        ? { ...msg, content: accumulatedContent }
+                                        : msg
+                                ))
+                            } catch (e) {
+                                // Silent skip for partial JSON
+                            }
+                        }
+                    }
+                }
+            }
         } catch (error) {
             console.error('Chat error:', error)
+            setMessages(prev => [...prev, {
+                role: 'assistant',
+                content: "I'm sorry, I'm having trouble connecting to the economic grid. Please try again in a moment."
+            }])
         } finally {
             setIsLoading(false)
         }
