@@ -60,7 +60,7 @@ export default function ChatInterface() {
                 body: JSON.stringify({
                     message: text,
                     mode,
-                    history: messages.slice(-10) // Limit history for context window
+                    history: messages.slice(-10)
                 }),
             })
 
@@ -87,7 +87,6 @@ export default function ChatInterface() {
                                 const parsed = JSON.parse(data)
                                 accumulatedContent += parsed.content
 
-                                // Update the specifically created assistant message
                                 setMessages(prev => prev.map(msg =>
                                     msg.id === assistantMsgId
                                         ? { ...msg, content: accumulatedContent }
@@ -155,7 +154,7 @@ export default function ChatInterface() {
                 ) : (
                     <>
                         {messages.map((msg, i) => (
-                            <MessageBubble key={i} message={msg} />
+                            <MessageBubble key={msg.id || i} message={msg} />
                         ))}
                         {isLoading && (
                             <div className="flex items-center space-x-2 text-gray-500 p-4 cyber-glass rounded-2xl w-fit">

@@ -1,34 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { buildMessages, type AudienceMode } from '@/lib/ai/prompt-builder'
-import { createStreamingChatCompletion } from '@/lib/ai/client'
+import { Groq } from 'groq-sdk'
+import { buildMessages } from '@/lib/ai/prompt-builder'
+
+const groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY,
+})
 
 export const runtime = 'edge'
 
-interface ChatRequestBody {
-    message: string
-    mode: AudienceMode
-    history?: Array<{ role: 'user' | 'assistant'; content: string }>
-}
-
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
     try {
-        const body: ChatRequestBody = await req.json()
-        const { message, mode, history } = body
+        const { message, mode, history } = await req.json()
 
-        if (!message || !mode) {
-            return NextResponse.json(
-                { error: 'Message and mode are required' },
-                { status: 400 }
-            )
-        }
-
-        // Build messages with system prompt
         const messages = buildMessages({ mode, history }, message)
 
-        // Create streaming response
-        const stream = await createStreamingChatCompletion({ messages })
+        const stream = await groq.chat.completions.create({
+            model: 'llama-3.3-70b-versatile',
+            messages: messages.map(m => ({
+                role: m.role as any,
+                content: m.content as string
+            })),
+            stream: true,
+        })
 
-        // Create a readable stream for the response
         const encoder = new TextEncoder()
         const customStream = new ReadableStream({
             async start(controller) {
@@ -55,11 +48,11 @@ export async function POST(req: NextRequest) {
                 'Connection': 'keep-alive',
             },
         })
-    } catch (error) {
-        console.error('Chat API error:', error)
-        return NextResponse.json(
-            { error: 'Failed to process chat request' },
-            { status: 500 }
-        )
+    } catch (error: any) {
+        console.error('Chat API Error:', error)
+        return new Response(JSON.stringify({ error: error.message }), {
+            status: 500,
+            headers: { 'Content-Type': 'application/json' },
+        })
     }
 }
