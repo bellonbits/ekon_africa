@@ -30,7 +30,7 @@ export default function ChatPage() {
                 {/* Background Glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-primary-600/5 blur-[120px] pointer-events-none rounded-full" />
 
-                <div className="container max-w-6xl mx-auto px-4 py-8 flex-1 flex flex-col relative z-10 text-center">
+                <div className="container max-w-6xl mx-auto px-4 py-8 flex-1 flex flex-col relative z-10">
                     <ChatInterface />
                 </div>
             </main>
